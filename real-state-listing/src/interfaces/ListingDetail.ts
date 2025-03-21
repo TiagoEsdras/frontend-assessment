@@ -1,4 +1,4 @@
-export interface RealEstate {
+export interface ListingDetail {
   Id: number;
   DateListed: string;
   Title: string;

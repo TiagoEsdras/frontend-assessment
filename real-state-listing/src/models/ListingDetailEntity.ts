@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 
-export class PropertyEntity {
+export class ListingDetailEntity {
     id!: number;
     dateListed!: string;
     title!: string;
