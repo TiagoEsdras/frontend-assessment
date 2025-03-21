@@ -6,22 +6,26 @@
   --light-gray: #EAE7E3;
   --dark-blue: #202f3d;
   --beige: #8C8273;
+  --dark-gray: #464646;
 }
 
 .bg-gold { background-color: var(--gold); }
 .bg-off-white { background-color: var(--off-white); }
 .bg-light-gray { background-color: var(--light-gray); }
+.bg-dark-gray { background-color: var(--dark-gray); }
 .bg-dark-blue { background-color: var(--dark-blue); }
 .bg-beige { background-color: var(--beige); }
 
 .text-gold { color: var(--gold); }
 .text-off-white { color: var(--off-white); }
 .text-light-gray { color: var(--light-gray); }
+.text-dark-gray { color: var(--dark-gray); }
 .text-dark-blue { color: var(--dark-blue); }
 .text-beige { color: var(--beige); }
 
 .border-gold { border-color: var(--gold); }
 .border-off-white { border-color: var(--off-white); }
 .border-light-gray { border-color: var(--light-gray); }
+.border-dark-gray { border-color: var(--dark-gray); }
 .border-dark-blue { border-color: var(--dark-blue); }
 .border-beige { border-color: var(--beige); }
