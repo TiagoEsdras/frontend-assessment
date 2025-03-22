@@ -1,18 +1,17 @@
-import { Expose } from 'class-transformer';
+import { Exposed } from "class-transform";
 
 export class ListingDetailEntity {
-    id!: number;
-    dateListed!: string;
-    title!: string;
-    description!: string;
-    @Expose({ name: 'Sale Price' })
-    salePrice!: number;
-    thumbnailURL!: string;
-    pictureURL!: string;
-    location!: string;
-    sqft!: number;
-    bedrooms!: number;
-    bathrooms!: number;
-    parking!: number;
-    yearBuilt!: number;
+    id = Exposed.alias("Id").number();
+    dateListed = Exposed.alias("DateListed").string();
+    title = Exposed.alias("Title").string();
+    description = Exposed.alias("Description").string();
+    salePrice = Exposed.alias("Sale Price").number();
+    thumbnailURL = Exposed.alias("ThumbnailURL").string();
+    pictureURL = Exposed.alias("PictureURL").string();
+    location = Exposed.alias("Location").string();
+    sqft = Exposed.alias("Sqft").number();
+    bedrooms = Exposed.alias("Bedrooms").number();
+    bathrooms = Exposed.alias("Bathrooms").number();
+    parking = Exposed.alias("Parking").number();
+    yearBuilt = Exposed.alias("YearBuilt").number();
 }

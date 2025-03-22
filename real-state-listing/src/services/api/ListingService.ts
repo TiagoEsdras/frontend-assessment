@@ -1,5 +1,5 @@
-import 'reflect-metadata';
-import { plainToInstance } from 'class-transformer';
+
+import { plainsToInstances } from "class-transform";
 
 import { ListingDetailEntity } from "../../models/ListingDetailEntity";
 
@@ -9,7 +9,7 @@ export const getListings = async (): Promise<{ data: ListingDetailEntity[] }> =>
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       try {        
-        const response = plainToInstance(ListingDetailEntity, listings);
+        const response = plainsToInstances(ListingDetailEntity, listings);
         resolve({ data: response });
       } catch (error) {       
         console.error('Error fetching listings data:', error);
