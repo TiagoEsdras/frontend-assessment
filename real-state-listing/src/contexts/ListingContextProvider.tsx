@@ -43,6 +43,7 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
   }, []);
 
   const handleSearch = useCallback((): void => {
+    setLoading(true);
     const filterChain = new FilterChain();
     const filteredListings = filterChain.applyFilters(
       originalListings,
@@ -51,7 +52,11 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
       parkingFilterSelected,
       salePricesFilterSelected
     );
-    setListings(filteredListings);
+
+    setTimeout(() => {
+      setListings(filteredListings);
+      setLoading(false);
+    }, 1000);
   }, [originalListings, bedroomsFilterSelected, bathroomsFilterSelected, parkingFilterSelected, salePricesFilterSelected]);
 
   useEffect(() => {
