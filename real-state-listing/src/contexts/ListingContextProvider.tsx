@@ -20,6 +20,7 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
   const [bathroomsFilterSelected, setBathroomFilterSelected] = useState<(string | number)>();
   const [parkingFilterSelected, setParkingFilterSelected] = useState<(string | number)>();
 
+
   const fetchListings = async (): Promise<void> => {
     try {
       setLoading(true);
@@ -55,6 +56,9 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
     setParkingFilterSelected(parkingFilterSelected ? parkingFilterSelected : values[0]);
   }, [parkingFilterSelected]);
 
+  const handleSearchClick = (): void => {
+  }
+
   return (
     <ListingContext.Provider value={{
       listings, setListings,
@@ -65,6 +69,7 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
       bedroomsFilterSelected, setBedroomFilterSelected,
       bathroomsFilterSelected, setBathroomFilterSelected,
       parkingFilterSelected, setParkingFilterSelected,
+      handleSearchClick
     }}>
       {children}
     </ListingContext.Provider>

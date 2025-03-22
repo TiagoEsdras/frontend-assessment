@@ -10,7 +10,8 @@ const Search = () => {
   const {
     bedroomsFilterValues, bedroomsFilterSelected, setBedroomFilterSelected,
     bathroomsFilterValues, bathroomsFilterSelected, setBathroomFilterSelected,
-    parkingFilterValues, parkingFilterSelected, setParkingFilterSelected
+    parkingFilterValues, parkingFilterSelected, setParkingFilterSelected,
+    handleSearchClick
   } = context!;
 
   return (
@@ -44,7 +45,7 @@ const Search = () => {
           currentMax={180000}
           title="Price Range"
         />
-        <button className="bg-dark-blue w-full lg:max-w-[160px] h-16 rounded-lg flex justify-center items-center text-off-white text-lg">
+        <button onClick={handleSearchClick} className="bg-dark-blue w-full lg:max-w-[160px] h-16 rounded-lg flex justify-center items-center text-off-white text-lg">
           <RiSearch2Line />
         </button>
       </div>

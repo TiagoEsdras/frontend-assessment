@@ -25,11 +25,10 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
         {icon}
         <div>
           <div className="text-[15px] font-medium leading-tight text-dark-blue">
-            {title}
-          </div>
-
-          <div className="text-[13px] text-dark-gray">
             {selectedValue}
+          </div>
+          <div className="text-[13px] text-dark-gray">
+            {title}
           </div>
         </div>
         {
@@ -42,7 +41,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       </MenuButton>
       <MenuItems className='px-6 py-5 text-[15px] text-dark-gray space-y-5 shadow-md bg-off-white absolute w-full z-10 list-none rounded-b-lg'>
         {dropdownValues?.map((value, index) => (
-          <MenuItem onClick={() => setSelectedValue(value)} className='cursor-pointer' key={index} as="li">
+          <MenuItem onClick={() => { setSelectedValue(value); setIsOpen(!isOpen) }} className='cursor-pointer' key={index} as="li">
             {({ focus }) => (
               <div
                 className={`px-4 py-2 cursor-pointer ${focus ? 'bg-[#8c827325] transition' : ''}`}
