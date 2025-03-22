@@ -7,7 +7,10 @@ interface FilterDropdownProps {
   title: string
 }
 
-const FilterDropdown: React.FC<FilterDropdownProps> = ({ icon, title }) => {
+const FilterDropdown: React.FC<FilterDropdownProps> = ({
+  icon,
+  title
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
