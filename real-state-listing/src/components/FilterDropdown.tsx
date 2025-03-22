@@ -29,9 +29,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
           </div>
 
           <div className="text-[13px] text-dark-gray">
-            {
-              selectedValue ? selectedValue : 'Select...'
-            }
+            {selectedValue}
           </div>
         </div>
         {
