@@ -11,6 +11,7 @@ const Search = () => {
     bedroomsFilterValues, bedroomsFilterSelected, setBedroomFilterSelected,
     bathroomsFilterValues, bathroomsFilterSelected, setBathroomFilterSelected,
     parkingFilterValues, parkingFilterSelected, setParkingFilterSelected,
+    salePriceRangeFilterValues, salePricesFilterSelected, setSalePricesFilterSelected,
     handleSearch
   } = context!;
 
@@ -39,11 +40,12 @@ const Search = () => {
           setSelectedValue={setParkingFilterSelected}
         />
         <FilterRange
-          min={40000}
-          max={200000}
-          currentMin={50000}
-          currentMax={180000}
+          min={salePriceRangeFilterValues[0]}
+          max={salePriceRangeFilterValues[1]}
+          currentMin={salePricesFilterSelected[0]}
+          currentMax={salePricesFilterSelected[1]}
           title="Price Range"
+          setSelectedValue={setSalePricesFilterSelected}
         />
         <button onClick={handleSearch} className="bg-dark-blue w-full lg:max-w-[160px] h-16 rounded-lg flex justify-center items-center text-off-white text-lg">
           <RiSearch2Line />

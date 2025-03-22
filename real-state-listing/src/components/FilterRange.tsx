@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { ThemeProvider } from '@mui/material';
@@ -10,6 +10,7 @@ interface FilterRangeProps {
   currentMin: number;
   currentMax: number;
   title: string;
+  setSelectedValue: React.Dispatch<React.SetStateAction<number[]>>
 }
 
 function valuetext(value: number) {
@@ -21,13 +22,20 @@ const FilterRange: React.FC<FilterRangeProps> = ({
   max,
   currentMin,
   currentMax,
-  title
+  title,
+  setSelectedValue
 }) => {
-  const [value, setValue] = useState<number[]>([currentMin, currentMax]);
+  console.log(currentMax)
+  const [value, setValue] = useState<number[]>([]);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number[]);
+  const handleChange = (event: Event, currentRange: number | number[]) => {
+    setSelectedValue(currentRange as number[])
+    setValue(currentRange as number[]);
   };
+
+  useEffect(() => {
+    setValue([currentMin, currentMax])
+  }, [currentMin, currentMax]);
 
   return (
     <div className='w-full lg:max-w-[296px] cursor-pointer relative flex justify-center'>
@@ -46,7 +54,7 @@ const FilterRange: React.FC<FilterRangeProps> = ({
             onChange={handleChange}
             valueLabelDisplay="auto"
             getAriaValueText={valuetext}
-            step={10000}
+            step={100000}
             marks
             disableSwap
             min={min}

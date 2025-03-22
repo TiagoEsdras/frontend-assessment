@@ -25,6 +25,12 @@ interface ListingContextType {
   parkingFilterSelected: (number | string | undefined);
   setParkingFilterSelected: React.Dispatch<React.SetStateAction<(number | string | undefined)>>;
 
+  salePriceRangeFilterValues: number[];
+  setSalePriceRangeFilterValues: React.Dispatch<React.SetStateAction<number[]>>;
+
+  salePricesFilterSelected: number[];
+  setSalePricesFilterSelected: React.Dispatch<React.SetStateAction<number[]>>;
+
   handleSearch: () => void;
 }
 

@@ -17,11 +17,12 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
   const [bedroomsFilterValues, setBedroomFilterValues] = useState<(string | number)[]>([]);
   const [bathroomsFilterValues, setBathroomFilterValues] = useState<(string | number)[]>([]);
   const [parkingFilterValues, setParkingFilterValues] = useState<(string | number)[]>([]);
+  const [salePriceRangeFilterValues, setSalePriceRangeFilterValues] = useState<number[]>([]);
 
   const [bedroomsFilterSelected, setBedroomFilterSelected] = useState<(string | number)>();
   const [bathroomsFilterSelected, setBathroomFilterSelected] = useState<(string | number)>();
   const [parkingFilterSelected, setParkingFilterSelected] = useState<(string | number)>();
-
+  const [salePricesFilterSelected, setSalePricesFilterSelected] = useState<number[]>([]);
 
   const fetchListings = async (): Promise<void> => {
     try {
@@ -52,8 +53,6 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
     setListings(filteredListings);
   }, [originalListings, bedroomsFilterSelected, bathroomsFilterSelected, parkingFilterSelected]);
 
-
-
   useEffect(() => {
     const values: (number | string)[] = ['Select...', 1, 2, 3, '4+'];
     setBedroomFilterValues(values);
@@ -71,10 +70,13 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
     const values: (number | string)[] = ['Select...', 1, 2, 3, 4, '5+'];
     setParkingFilterValues(values);
     setParkingFilterSelected(parkingFilterSelected ? parkingFilterSelected : values[0]);
-
   }, [parkingFilterSelected]);
 
-
+  useEffect(() => {
+    const values: number[] = [0, 1000000];
+    setSalePriceRangeFilterValues(values);
+    setSalePricesFilterSelected(salePricesFilterSelected.length != 0 ? salePricesFilterSelected : values)
+  }, [salePricesFilterSelected]);
 
   return (
     <ListingContext.Provider value={{
@@ -83,9 +85,11 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
       bedroomsFilterValues, setBedroomFilterValues,
       bathroomsFilterValues, setBathroomFilterValues,
       parkingFilterValues, setParkingFilterValues,
+      salePriceRangeFilterValues, setSalePriceRangeFilterValues,
       bedroomsFilterSelected, setBedroomFilterSelected,
       bathroomsFilterSelected, setBathroomFilterSelected,
       parkingFilterSelected, setParkingFilterSelected,
+      salePricesFilterSelected, setSalePricesFilterSelected,
       handleSearch
     }}>
       {children}
