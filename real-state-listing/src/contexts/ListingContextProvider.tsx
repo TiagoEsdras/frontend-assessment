@@ -48,10 +48,11 @@ const ListingContextProvider = ({ children }: ListingContextProviderProps) => {
       originalListings,
       bedroomsFilterSelected,
       bathroomsFilterSelected,
-      parkingFilterSelected
+      parkingFilterSelected,
+      salePricesFilterSelected
     );
     setListings(filteredListings);
-  }, [originalListings, bedroomsFilterSelected, bathroomsFilterSelected, parkingFilterSelected]);
+  }, [originalListings, bedroomsFilterSelected, bathroomsFilterSelected, parkingFilterSelected, salePricesFilterSelected]);
 
   useEffect(() => {
     const values: (number | string)[] = ['Select...', 1, 2, 3, '4+'];

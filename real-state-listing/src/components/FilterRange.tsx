@@ -25,12 +25,11 @@ const FilterRange: React.FC<FilterRangeProps> = ({
   title,
   setSelectedValue
 }) => {
-  console.log(currentMax)
   const [value, setValue] = useState<number[]>([]);
 
   const handleChange = (event: Event, currentRange: number | number[]) => {
-    setSelectedValue(currentRange as number[])
     setValue(currentRange as number[]);
+    setSelectedValue(currentRange as number[])
   };
 
   useEffect(() => {
