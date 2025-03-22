@@ -25,7 +25,7 @@ interface ListingContextType {
   parkingFilterSelected: (number | string | undefined);
   setParkingFilterSelected: React.Dispatch<React.SetStateAction<(number | string | undefined)>>;
 
-  handleSearchClick: () => void;
+  handleSearch: () => void;
 }
 
 
