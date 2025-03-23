@@ -6,14 +6,18 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import ListingDetails from './pages/ListingDetails';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
-  return <div className='max-w-[1440px] mx-auto bg-off-white'>
+  return <div className='min-h-screen flex flex-col max-w-[1440px] mx-auto bg-off-white'>
+    <ScrollToTop />
     <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/listing/:id" element={<ListingDetails />} />
-    </Routes>
+    <div className="flex-grow">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listing/:id" element={<ListingDetails />} />
+      </Routes>
+    </div>
     <Footer />
   </div>;
 }

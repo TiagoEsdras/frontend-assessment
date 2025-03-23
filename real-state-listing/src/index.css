@@ -29,3 +29,11 @@
 .border-dark-gray { border-color: var(--dark-gray); }
 .border-dark-blue { border-color: var(--dark-blue); }
 .border-beige { border-color: var(--beige); }
+
+.ring-gold { --tw-ring-color: var(--gold); }
+.ring-off-white { --tw-ring-color: var(--off-white); }
+.ring-light-gray { --tw-ring-color: var(--light-gray); }
+.ring-dark-gray { --tw-ring-color: var(--dark-gray); }
+.ring-dark-blue { --tw-ring-color: var(--dark-blue); }
+.ring-beige { --tw-ring-color: var(--beige); }
+
