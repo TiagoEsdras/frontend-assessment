@@ -19,7 +19,7 @@ const ListingDetails = () => {
     );
   }
 
-  if (!listing) {
+  if (!listing && !loading) {
     return (
       <NotFound />
     );
@@ -28,7 +28,7 @@ const ListingDetails = () => {
   return (
     <div className="flex flex-col gap-4 lg:flex-row px-4">
       <div className="lg:min-w-[768px]">
-        <ListingDetail listing={listing} />
+        <ListingDetail listing={listing!} />
       </div>
       <div className="w-full">
         <Form />
