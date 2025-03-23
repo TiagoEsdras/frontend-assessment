@@ -4,6 +4,7 @@ import ListingDetail from "../components/ListingDetail";
 import Loading from "../components/Loading";
 import { useParams } from "react-router-dom";
 import { ListingContext } from "../contexts/ListingContext";
+import NotFound from "../components/NotFound";
 
 const ListingDetails = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const ListingDetails = () => {
 
   if (!listing) {
     return (
-      <div>Not Found</div>
+      <NotFound />
     );
   }
 
