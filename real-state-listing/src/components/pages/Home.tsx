@@ -1,6 +1,6 @@
-import Banner from "../components/Banner";
-import Listing from "../components/Listing";
-import Search from "../components/Search";
+import Banner from "../Banner";
+import Listing from "../Listing";
+import Search from "../Search";
 
 const Home = () => {
   return (

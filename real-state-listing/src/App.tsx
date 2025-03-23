@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import Home from './pages/Home';
-import ListingDetails from './pages/ListingDetails';
+import Home from './components/pages/Home';
+import ListingDetails from './components/pages/ListingDetails';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {

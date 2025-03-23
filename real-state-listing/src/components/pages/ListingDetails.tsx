@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import Form from "../components/Form";
-import ListingDetail from "../components/ListingDetail";
-import Loading from "../components/Loading";
+import Form from "../Form";
+import ListingDetail from "../ListingDetail";
+import Loading from "../Loading";
 import { useParams } from "react-router-dom";
-import { ListingContext } from "../contexts/ListingContext";
-import NotFound from "../components/NotFound";
+import { ListingContext } from "../../contexts/ListingContext";
+import NotFound from "../NotFound";
 
 const ListingDetails = () => {
   const { id } = useParams();
